@@ -1,49 +1,59 @@
- 
-Screen:
 
-    MDCard:
-        size_hint: None, None
-        size: 300, 450
-        pos_hint: {"center_x": 0.5, "center_y": 0.5}
-        elevation: 10
-        padding: 65
-        spacing: 35
-        orientation: 'vertical'
-        MDIcon:
-            icon: 'account'
-            icon_color: 0,0,0,0
-            haling: 'center'
-            font_size: 180
-        MDTextFieldRound:
-            id: user
-            icon_left: 'account-check'
-            hint_text: "Username"
-            foreground_color: 0,0,0,1
-            size_hint_x: None
-            width: 220
-            font_size: 20
-            pos_hint: {"center_x": 0.5}
-        MDTextFieldRound:
-            id: password
-            icon_left: "key-variant"
-            hint_text: "Password"
-            foreground_color: 0,0,0,1
-            size_hint_x: None
-            width: 220
-            font_size: 20
-            pos_hint: {"center_x": 0.5}
-            password: True
-        BoxLayout:
 
-            spacing: 10
-            MDFillRoundFlatButton:
-                text: "LOG IN"
-                font_size: 15
+MDScreen:
 
-                on_press: app.login()
+    MDBottomNavigation:
 
-            MDFillRoundFlatButton:
-                text: "ClOSE"
-                font_size: 15
-                pos_hint: {'right': 0}
-                on_press: app.close()
+
+        text_color_normal: 1,1,1,1
+        text_color_active: 0.5,0.2,0.7,1
+
+        MDBottomNavigationItem:
+
+            name: 'screen 1'
+            text: 'Balance'
+            icon: 'wallet'
+            badge_icon: "numeric-10"
+
+            MDBoxLayout:
+                MDLabel:
+                    text: app.x
+                    halign: 'center'
+
+
+        MDBottomNavigationItem:
+            name: 'screen 2'
+            text: 'Assets'
+            icon: 'bitcoin'
+
+            TwoLineAvatarIconListItem:
+                halign: 'center'
+                text: '1 asset'
+                secondary_text: 'aserto'
+
+                IconLeftWidget:
+                    icon: 'key'
+
+        MDBottomNavigationItem:
+            name: 'screen 3'
+            text: 'Assets'
+            icon: 'bitcoin'
+
+            MDLabel:
+                text: 'your nft'
+                halign: 'center'
+
+
+
+
+        MDBottomNavigationItem:
+            name: 'screen 4'
+            text: 'Settings'
+            icon: 'security'
+
+
+
+
+
+
+
